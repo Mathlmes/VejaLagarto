@@ -1,0 +1,143 @@
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item img {
+    z-index: 1;
+    /* height: 700px; */
+    max-height: 850px;
+    object-fit: cover;
+    object-position: bottom center;
+    /* faz com que a imagem preencha o espaço sem distorcer, cortando o excedente */
+    /* evita distorção */
+    /* centraliza imagem */
+
+}
+
+.campo-center img {
+    object-fit: cover;
+    /* preenche o espaço */
+    object-position: center;
+    /* centraliza imagem */
+}
+
+img.contain {
+    object-fit: contain;
+}
+
+img.cover {
+    object-fit: cover;
+}
+
+img.fill {
+    object-fit: fill;
+}
+
+img.none {
+    object-fit: none;
+}
+
+img.scale-down {
+    object-fit: scale-down;
+}
+
+.espelho {
+    position: absolute;
+
+    bottom: -10;
+
+    z-index: 999999;
+
+    background: rgba(25, 135, 84, 0.43);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.9px);
+    -webkit-backdrop-filter: blur(0.9px);
+    border: 1px solid rgba(25, 135, 84, 0.2);
+
+    padding: 16px;
+}
+
+
+/* Texto principal */
+.legenda {
+    position: absolute;
+    bottom: 100px;
+    /* distância do rodapé da imagem */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* Reflexo */
+.legenda::after {
+    content: attr(data-text);
+    /* duplica texto, mas vamos usar outro truque */
+    content: "";
+    position: absolute;
+    top: 100%;
+    /* joga pra baixo do texto */
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* usa o conteúdo real como reflexo */
+    transform: scaleY(-1);
+    opacity: 0.5;
+
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+}
+
+/* .banner-intro {
+    position: relative;
+    background: url('imgs/arvore.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba(25, 135, 84, 0.3);
+    /* -webkit-backdrop-filter: blur(0.9px);
+    backdrop-filter: blur(15px);
+    background-blend-mode: multiply;
+    /* ou overlay, screen, darken, etc. 
+
+    padding: 4rem 8px;
+} */
+
+.banner-intro {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* impede que o blur vaze */
+    padding: 4rem 8px;
+    z-index: 0;
+    min-height: 900px;
+}
+
+.banner-intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('imgs/arvore.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(8px);
+    /* aplica o blur real */
+    transform: scale(1.1);
+    /* evita bordas do blur */
+    z-index: -1;
+}
+
+.banner-intro::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(25, 135, 84, 0.6);
+    /* overlay de cor */
+    mix-blend-mode: multiply;
+    /* mesmo efeito que você já usava */
+    z-index: -1;
+}
