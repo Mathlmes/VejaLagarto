@@ -55,12 +55,12 @@ img.scale-down {
 
     z-index: 99;
 
-    background: rgba(25, 135, 84, 0.43);
+    background: rgba(255, 111, 0, 0.43);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0.9px);
     -webkit-backdrop-filter: blur(0.9px);
-    border: 1px solid rgba(25, 135, 84, 0.2);
+    border: 1px solid rgba(255, 111, 80, 0.2);
 
     padding: 16px;
 }
@@ -153,7 +153,7 @@ img.scale-down {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(25, 135, 84, 0.6);
+    background: rgba(255, 111, 0, 0.43);
     /* overlay de cor */
     mix-blend-mode: multiply;
     /* mesmo efeito que você já usava */
@@ -261,4 +261,11 @@ img.scale-down {
 
 .religiosidade {
     z-index: 2;
+}
+.bg-orange {
+    background: #FF6F00;
+}
+
+.bg-brown {
+    background: #8D5524;
 }
