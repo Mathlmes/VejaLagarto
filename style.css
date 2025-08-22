@@ -14,6 +14,13 @@
 
 }
 
+@media screen and (max-width: 768px) {
+    .carousel-item img {
+        height: 400px;
+        /* altura máxima para telas menores */
+    }
+}
+
 .campo-center img {
     object-fit: cover;
     /* preenche o espaço */
@@ -62,7 +69,7 @@ img.scale-down {
 /* Texto principal */
 .legenda {
     position: absolute;
-    bottom: 100px;
+    bottom: 10%;
     /* distância do rodapé da imagem */
     left: 50%;
     transform: translateX(-50%);
@@ -116,13 +123,24 @@ img.scale-down {
     padding: 4rem 8px;
     z-index: 0;
     min-height: 900px;
+    /* //max-height: 900px; */
 }
+
+/* @media screen and (max-width: 768px) {
+    .banner-intro {
+        min-height: 400px;
+        max-height: 400;
+    }
+
+    .banner-intro img
+
+} */
 
 .banner-intro::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: url('imgs/arvore.jpg') no-repeat center center fixed;
+    background: url('imgs/pracatanque.jpeg') no-repeat center center fixed;
     background-size: cover;
     filter: blur(8px);
     /* aplica o blur real */
@@ -151,11 +169,24 @@ img.scale-down {
     backdrop-filter: blur(0.9px);
     -webkit-backdrop-filter: blur(0.9px);
     border: 0;
-    min-height: 700px;
+    /* min-height: 700px; */
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        /* //min-height: 400px; */
+        /* altura mínima para telas maiores */
+    }
+
+}
+
+.paisagens .card {
+    min-height: 500px;
+    /* altura mínima para paisagens */
 }
 
 .card img {
-    max-height: 500px;
+    height: 500px;
     object-fit: cover;
     object-position: center;
     /* centraliza imagem */
@@ -165,7 +196,7 @@ img.scale-down {
 .card-body {
     position: relative;
     z-index: 1;
-    padding: 16px;
+    padding-top: 16px;
     background: rgba(255, 255, 255, 0.8);
     /* fundo branco com leve transparência */
     border-radius: 0 0 16px 16px;
@@ -190,7 +221,7 @@ img.scale-down {
     z-index: 2;
 }
 
-.paisagens::before {
+/* .paisagens::before {
     content: "";
     width: 30%;
     height: 30%;
@@ -203,8 +234,6 @@ img.scale-down {
     filter: blur(1px);
     rotate: 45deg;
     top: 50%;
-    /* aplica o blur real */
-    /* evita bordas do blur */
     z-index: -1;
 
 }
@@ -215,9 +244,9 @@ img.scale-down {
     height: 250px;
     border-radius: 32px;
     background: rgba(193, 148, 11, 0.2);
-    /* background: red; */
+    /* background: red; 
     position: absolute;
-    /* inset: 0; */
+    /* inset: 0; 
     background-size: cover;
     z-index: 1;
     filter: blur(1px);
@@ -226,9 +255,9 @@ img.scale-down {
     right: 45%;
     overflow: hidden;
     /* aplica o blur real */
-    /* evita bordas do blur */
-    /* z-index: -1; */
-}
+/* evita bordas do blur */
+/* z-index: -1; 
+} */
 
 .religiosidade {
     z-index: 2;
